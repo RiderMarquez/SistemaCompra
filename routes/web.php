@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProveedorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,9 +40,13 @@ Route::middleware('auth')->group(function (){
         Route::get('cliente/creando',  'crear');
      
     });
-});
-    
-//clientes
-Route::get('clientes', function () {
-   return 'HOLA Clientes' ;
+
+    Route::controller(ProveedorController::class)->group(function () {
+        Route::get('proveedor', 'index')->name('proveedor.index');
+        Route::get('proveedor/creando',  'crear')->name('proveedor.crear');
+        Route::post('proveedor', 'store')->name('proveedor.store');
+        Route::get('proveedor/{id}', 'show')->name('proveedor.show');
+        Route::delete('proveedor/{ProductoID}', 'destroy')->name('proveedor.delete');
+        Route::put('proveedor/{id}', [ProveedorController::class, 'update'])->name('proveedor.edit');
+    });
 });

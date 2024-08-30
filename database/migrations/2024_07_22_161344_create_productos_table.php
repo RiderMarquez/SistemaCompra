@@ -13,11 +13,18 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id('ProductoID');
+            $table->unsignedBigInteger('CategoriaID');
             $table->string('Nombre', 100);
             $table->integer('PrecioUnitario');
             $table->integer('stock');
             $table->string('Descripcion', 100)->nullable();
             $table->timestamps();
+
+            $table->foreign('CategoriaID')
+                    ->references('CategoriaID')
+                    ->on('categorias')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
         });
     }
 

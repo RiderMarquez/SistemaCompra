@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url ('/proveedores') }}" style="color: #ffffff;">
+                        <a class="nav-link" href="{{ url ('/proveedor') }}" style="color: #ffffff;">
                             <i class="bi bi-truck"></i> Proveedores
                         </a>
                     </li>

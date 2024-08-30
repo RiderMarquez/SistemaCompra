@@ -9,7 +9,6 @@ use Spatie\LaravelIgnition\Recorders\DumpRecorder\DumpHandler;
 
 class ProductoController extends Controller
 {
-
     public function index() {
         $productos = Producto::all();
         return view('producto.productos', ["productos"=> $productos]);
