@@ -43,10 +43,10 @@ Route::middleware('auth')->group(function (){
 
     Route::controller(ProveedorController::class)->group(function () {
         Route::get('proveedor', 'index')->name('proveedor.index');
-        Route::get('proveedor/creando',  'crear')->name('proveedor.crear');
+        Route::get('proveedor/creando', 'crear')->name('proveedors.create');
         Route::post('proveedor', 'store')->name('proveedor.store');
         Route::get('proveedor/{id}', 'show')->name('proveedor.show');
-        Route::delete('proveedor/{ProductoID}', 'destroy')->name('proveedor.delete');
-        Route::put('proveedor/{id}', [ProveedorController::class, 'update'])->name('proveedor.edit');
-    });
+        Route::delete('proveedor/{id}', 'destroy')->name('proveedor.destroy'); 
+        Route::put('proveedor/{id}', 'update')->name('proveedors.update');
+    });    
 });
