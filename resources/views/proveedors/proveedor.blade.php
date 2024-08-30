@@ -74,7 +74,7 @@
                             <td>{{ $proveedors->Telefono }}</td>
                             <td>{{ $proveedors->Direccion }}</td>
                             <td>
-                                <a href="{{ route('proveedor.edit', $proveedors->ProveedorID) }}" class="btn" style="background-color: #FFC029; color: #1E2875;">Editar</a>
+                                <a href="{{ route('proveedors.update', $proveedors->ProveedorID) }}" class="btn" style="background-color: #FFC029; color: #1E2875;">Editar</a>
                                 <form action="{{ route('proveedor.destroy', $proveedors->ProveedorID) }}" method="post" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
